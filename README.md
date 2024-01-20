@@ -30,7 +30,7 @@ CMD ["--help"]
 ## `entrypoint.sh` permission
 
 - `chmod a+x entrypoint.sh` gives `-rwxr-xr-x` and we need
-- `chmod -R 755 entrypoint.sh` (aka `-rwxrwxr-x`)
+- `chmod -R 775 entrypoint.sh` (aka `-rwxrwxr-x`)
 
 
 ## Run locally
