@@ -31,11 +31,15 @@ CMD ["--help"]
 
 - `chmod a+x entrypoint.sh` gives `-rwxr-xr-x` and we need
 - `chmod -R 775 entrypoint.sh` (aka `-rwxrwxr-x`)
+- As result also need to change line in Dockerfile `RUN chmod 775 ./entrypoint.sh`
 
 
 ## Run locally
 
 - `docker build -t my-entrypoint-test-img:latest --file Dockerfile .`
 - `docker run --name=MyEntrypointContainer -d my-entrypoint-test-img:latest`
+
+## Other commands to troubleshoot
+
 - `docker run -it --rm --entrypoint /bin/bash my-entrypoint-test-img`
 - `docker run  --entrypoint my-entrypoint-test-img "/bin/bash"` - WRONG syntax
