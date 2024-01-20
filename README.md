@@ -3,10 +3,31 @@ My DevOps GitHub Action
 
 This is experimental, educational repository to build a custom GitHub Action.
 
-Goal/behavior is TBD.
+## Usage in another GitHub Action YAML
 
-- Custom `action.yml` is designed to publish GitHub Action to Marketplace.
+```
+...
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Using my custom GitHub action
+        uses: alundiak/devops-gha@main
+
+...
+```
+
+
+## Goal/behavior is TBD
+
+- Custom `action.yml` is a sign that my code can be published GitHub Action to Marketplace.
 - For now it's just a Docker image using `ENTRYPOINT` command (a Docker layer).
+
 
 ## About `ENTRYPOINT`
 
@@ -43,3 +64,4 @@ CMD ["--help"]
 
 - `docker run -it --rm --entrypoint /bin/bash my-entrypoint-test-img`
 - `docker run  --entrypoint my-entrypoint-test-img "/bin/bash"` - WRONG syntax
+

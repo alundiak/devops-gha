@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY ./entrypoint.sh ./entrypoint.sh
 
-RUN chmod 775 ./entrypoint.sh
+RUN chmod 777 ./entrypoint.sh
 
-ENTRYPOINT ["/bin/sh", "./entrypoint.sh"]
+# ENTRYPOINT ["/bin/sh", "./entrypoint.sh"]
+ENTRYPOINT ["./entrypoint.sh"]
