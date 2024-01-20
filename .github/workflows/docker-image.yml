@@ -18,7 +18,7 @@ jobs:
     - run: docker images
 
     - name: Run Docker container
-      run: docker run --name=MyEntrypointContainer -d my-entrypoint-test-img:latest
+      run: docker run --name=MyEntrypointContainer -d my-github-action-img:latest
     
     - run: docker ps
     
