@@ -4,7 +4,8 @@ WORKDIR /app
 
 COPY entrypoint.sh ./entrypoint.sh
 
-RUN chmod 777 ./entrypoint.sh
+RUN chmod 775 ./entrypoint.sh
 
-# ENTRYPOINT ["/bin/sh", "./entrypoint.sh"]
-ENTRYPOINT ["./entrypoint.sh"]
+# Both works locally on MacOS host or inside of container
+ENTRYPOINT ["/bin/sh", "./entrypoint.sh"]
+# ENTRYPOINT ["./entrypoint.sh"]
