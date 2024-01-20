@@ -27,6 +27,11 @@ CMD ["--help"]
 - `docker run --entrypoint <image> “/bin/bash”` - WRONG syntax
 
 
+## `entrypoint.sh` permission
+
+- `chmod a+x entrypoint.sh` gives `-rwxr-xr-x` and we need
+- `chmod -R 755 entrypoint.sh` (aka `-rwxrwxr-x`)
+
 
 ## Run locally
 
