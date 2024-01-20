@@ -55,6 +55,42 @@ CMD ["--help"]
 - As result also need to change line in Dockerfile `RUN chmod 775 ./entrypoint.sh`
 
 
+## Shell (outside and inside)
+
+On my MacOS, as host environment I have both: `/bin/sh` and NO `/bin/bash`. 
+
+GitHub Action environment seems to have `/usr/bin/sh` and `/usr/bin/bash`
+
+My basic Dockerfile uses `FROM node:21-alpine` which give a bundle with ONLY one shell available from `/bin/sh`.
+
+And initially I created `entrypoint.sh` file with `#!/bin/bash` which worked for me locally when I even built a Docker image on MacOS. But it fails on GitHub Action environment.
+
+To prove that when I am inside of Docker container I executed 3 lines:
+
+When execute `entrypoint.sh` (with `#!/bin/bash` or with `#!/bin/sh`) on MacOS host:
+
+- $ `./entrypoint.sh` - OK
+- $ `sh ./entrypoint.sh` - OK
+- $ `bash ./entrypoint.sh` - OK
+
+When execute `entrypoint.sh` (with `#!/bin/bash`) inside of Docker NodeJS container:
+
+- /app # `./entrypoint.sh` - FAILS (/bin/sh: `./entrypoint.sh: not found`)
+- /app # `sh ./entrypoint.sh` - OK
+- /app # `bash ./entrypoint.sh` - FAILS (/bin/sh: `bash: not found`)
+
+When execute `entrypoint.sh` (with `#!/bin/sh`) inside of Docker NodeJS container:
+
+- /app # `./entrypoint.sh` - OK **IMPORTANT HERE**
+- /app # `sh ./entrypoint.sh` - OK
+- /app # `bash ./entrypoint.sh` - FAILS (/bin/sh: `bash: not found`)
+
+
+**TL;DR**
+
+For `node:21-alpine` image/container only `/bin/sh` is available inside, so shebang should be `#!/bin/sh`.
+
+
 ## Run locally
 
 - `docker build -t my-entrypoint-test-img:latest --file Dockerfile .`

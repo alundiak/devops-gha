@@ -1,11 +1,12 @@
 {
   "name": "@lundiak/devops-gha",
   "version": "1.0.0",
-  "description": "My DevOps GitHub Action to run Docker image build",
+  "description": "My experimental GitHub Action to run Docker NodeJS image build",
   "main": "index.js",
   "scripts": {
     "buildImage": "docker build -t my-entrypoint-test-img:latest --file Dockerfile .",
     "runContainer": "docker run --name=MyEntrypointContainer -d my-entrypoint-test-img:latest",
+    "down": "docker stop MyEntrypointContainer && docker rm MyEntrypointContainer && docker rmi my-entrypoint-test-img:latest",
     "start": "npm run buildImage && npm run runContainer"
   },
   "keywords": [],

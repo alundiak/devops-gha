@@ -4,5 +4,3 @@ description: "TBD"
 runs:
   using: "docker"
   image: "Dockerfile"
-  # on:
-  #   workflow_dispatch:
