@@ -1,10 +1,9 @@
 #!/bin/sh
 
+uname -a
 echo "Ubuntu says Hello to Entry Point"
 
-uname -a
-
-# Work only this way on 'FROM ubuntu' (v22.04)
+# Works only this way on 'FROM ubuntu' (v22.04)
 cat /etc/lsb-release
 
 # 

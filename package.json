@@ -9,7 +9,9 @@
     "buildImageUbuntu": "docker build -t my-entrypoint-test-img:latest --file Dockerfile.ubuntu .",
     "runContainer": "docker run --name=MyEntrypointContainer -d my-entrypoint-test-img:latest",
     "down": "docker stop MyEntrypointContainer && docker rm MyEntrypointContainer && docker rmi my-entrypoint-test-img:latest",
-    "start": "npm run buildImageUbuntu && npm run runContainer"
+    "startNode": "npm run buildImageNode && npm run runContainer",
+    "startNodeAlpine": "npm run buildImageNodeAlpine && npm run runContainer",
+    "startUbuntu": "npm run buildImageUbuntu && npm run runContainer"
   },
   "keywords": [],
   "author": "",

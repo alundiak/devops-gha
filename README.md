@@ -124,7 +124,7 @@ Note when `FROM ubuntu:latest` then inside of container:
 ```
 
 
-And for `FROM node` (which is fill version of image) it does have even 'dash':
+And for `FROM node` (which is full v21 of image) it does have even 'dash':
 
 ```sh
 # which sh

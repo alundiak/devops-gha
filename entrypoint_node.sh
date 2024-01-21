@@ -1,13 +1,10 @@
 #!/bin/sh
 
+uname -a
 echo "NodeJS says Hello to Entry Point"
 
-# node --version
-# npm --version
-uname -a
-
-# Work only this way on 'FROM ubuntu' (v22.04)
-cat /etc/lsb-release
+node --version
+npm --version
 
 # 
 # This will keep the script running
