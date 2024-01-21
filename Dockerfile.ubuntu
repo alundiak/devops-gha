@@ -1,3 +1,11 @@
 FROM ubuntu
-ENTRYPOINT ["ps", "auxw"]
+# no node, no npm
+
+WORKDIR /app
+COPY entrypoint_ubuntu.sh ./entrypoint_ubuntu.sh
+RUN chmod 775 ./entrypoint_ubuntu.sh
+ENTRYPOINT ./entrypoint_ubuntu.sh
+
+# This works even on GitHub action
+# ENTRYPOINT ["ps", "auxw"]
 # CMD ["-c"]

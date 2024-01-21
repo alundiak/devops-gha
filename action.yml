@@ -1,6 +1,6 @@
-name: "Test Docker Image w ENTRYPOINT"
+name: "Get NodeJS and npm version"
+description: "Test Docker Image w ENTRYPOINT"
 author: "Andrii Lundiak ({{ github.actor }})"
-description: "TBD"
 runs:
   using: "docker"
   # image: "Dockerfile.node.alpine" # Works BAD in regards to shell

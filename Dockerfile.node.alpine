@@ -2,38 +2,38 @@ FROM node:21-alpine
 
 WORKDIR /app
 
-COPY entrypoint.sh ./entrypoint.sh
+COPY entrypoint_node.sh ./entrypoint_node.sh
 
-RUN chmod 775 ./entrypoint.sh
+RUN chmod 775 ./entrypoint_node.sh
 
 # Below variants work locally on MacOS host or when inside of container (which built/ran on MacOS host)
 # works on MacOS and inside of container
 
-# ENTRYPOINT ["/bin/sh", "./entrypoint.sh"] 
+# ENTRYPOINT ["/bin/sh", "./entrypoint_node.sh"] 
 # GitHub Action error: 
-# "/bin/sh: can't open './entrypoint.sh': No such file or directory"
+# "/bin/sh: can't open './entrypoint_node.sh': No such file or directory"
 
-# ENTRYPOINT /bin/sh ./entrypoint.sh 
+# ENTRYPOINT /bin/sh ./entrypoint_node.sh 
 # GitHub Action error:
-# /bin/sh: can't open './entrypoint.sh': No such file or directory
+# /bin/sh: can't open './entrypoint_node.sh': No such file or directory
 
-# ENTRYPOINT ["sh", "./entrypoint.sh"]
+# ENTRYPOINT ["sh", "./entrypoint_node.sh"]
 # GitHub Action error: 
-# sh: can't open './entrypoint.sh': No such file or directory
+# sh: can't open './entrypoint_node.sh': No such file or directory
 
-# ENTRYPOINT sh ./entrypoint.sh
+# ENTRYPOINT sh ./entrypoint_node.sh
 # GitHub Action error:
-# sh: can't open './entrypoint.sh': No such file or directory
+# sh: can't open './entrypoint_node.sh': No such file or directory
 
-# ENTRYPOINT ["./entrypoint.sh"]
+# ENTRYPOINT ["./entrypoint_node.sh"]
 # GitHub Action error:
 # docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: 
-# unable to start container process: exec: "./entrypoint.sh": stat ./entrypoint.sh: no such file or directory: unknown.
+# unable to start container process: exec: "./entrypoint_node.sh": stat ./entrypoint_node.sh: no such file or directory: unknown.
 
-# ENTRYPOINT ./entrypoint.sh
+# ENTRYPOINT ./entrypoint_node.sh
 # GitHub Action error:
-# /bin/sh: ./entrypoint.sh: not found
+# /bin/sh: ./entrypoint_node.sh: not found
 
-# ENTRYPOINT exec ./entrypoint.sh
+# ENTRYPOINT exec ./entrypoint_node.sh
 # GitHub error:
-# /bin/sh: exec: line 0: ./entrypoint.sh: not found
+# /bin/sh: exec: line 0: ./entrypoint_node.sh: not found
