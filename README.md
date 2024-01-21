@@ -31,6 +31,14 @@ jobs:
 
 ## About `ENTRYPOINT`
 
+Docker docs about [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint)
+
+```sh
+ENTRYPOINT ["executable", "param1", "param2"]
+ENTRYPOINT command param1 param2
+```
+
+
 https://kinsta.com/blog/dockerfile-entrypoint/
 
 ```sh
@@ -103,6 +111,15 @@ When execute `entrypoint.sh` (with `#!/bin/sh`) inside of Docker NodeJS containe
 
 For `node:21-alpine` image/container only `/bin/sh` is available inside, so shebang should be `#!/bin/sh`.
 
+Note when `FROM ubuntu:latest` then inside of container:
+
+```sh
+# which sh
+/usr/bin/sh
+
+# which bash
+/usr/bin/bash
+```
 
 ## Run locally
 

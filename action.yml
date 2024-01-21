@@ -3,4 +3,5 @@ author: "Andrii Lundiak ({{ github.actor }})"
 description: "TBD"
 runs:
   using: "docker"
-  image: "Dockerfile"
+  # image: "Dockerfile"
+  image: "U.Dockerfile"

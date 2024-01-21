@@ -9,14 +9,13 @@ RUN chmod 775 ./entrypoint.sh
 # Below variants work locally on MacOS host or when inside of container (which built/ran on MacOS host)
 # works on MacOS and inside of container
 
-
-# ENTRYPOINT ["/bin/sh", "./entrypoint.sh"] 
+ENTRYPOINT ["/bin/sh", "./entrypoint.sh"] 
 # GitHub Action error: 
 # "/bin/sh: can't open './entrypoint.sh': No such file or directory"
 
-ENTRYPOINT /bin/sh ./entrypoint.sh 
+# ENTRYPOINT /bin/sh ./entrypoint.sh 
 # GitHub Action error:
-
+# /bin/sh: can't open './entrypoint.sh': No such file or directory
 
 # ENTRYPOINT ["sh", "./entrypoint.sh"]
 # GitHub Action error: 
