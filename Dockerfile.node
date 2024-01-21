@@ -5,6 +5,7 @@ WORKDIR /app
 COPY entrypoint_node.sh ./entrypoint_node.sh
 
 RUN chmod 777 ./entrypoint_node.sh
+RUN chmod 777 /app/entrypoint_node.sh
 
 # ENTRYPOINT ["./entrypoint_node.sh"]
 # GH:
@@ -14,6 +15,7 @@ RUN chmod 777 ./entrypoint_node.sh
 # tbd
 # ENTRYPOINT exec ./entrypoint_node.sh
 
-ENTRYPOINT ./entrypoint_node.sh
+# ENTRYPOINT ./entrypoint_node.sh
+ENTRYPOINT /app/entrypoint_node.sh
 # locally works
 # on GH seems to be problematic
