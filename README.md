@@ -40,6 +40,14 @@ ENTRYPOINT command param1 param2
 
 > You can override the ENTRYPOINT setting using `--entrypoint`, but this can only set the binary to exec (no `sh -c` will be used).
 
+
+[Shell and exec form](https://docs.docker.com/engine/reference/builder/#shell-and-exec-form):
+
+The `RUN`, `CMD`, and `ENTRYPOINT` instructions all have two possible forms:
+- INSTRUCTION `["executable","param1","param2"]` (exec form)
+- INSTRUCTION `command param1 param2` (shell form)
+
+
 - [Writing the action code](https://docs.github.com/en/enterprise-cloud@latest/actions/creating-actions/creating-a-docker-container-action?learn=create_actions&learnProduct=actions#writing-the-action-code)
 - [Creating a Dockerfile](https://docs.github.com/en/enterprise-cloud@latest/actions/creating-actions/creating-a-docker-container-action?learn=create_actions&learnProduct=actions#creating-a-dockerfile)
 
@@ -141,6 +149,14 @@ And for `FROM node` (which is full v21 of image) it does have even 'dash':
 # which dash
 /usr/bin/dash
 ```
+
+
+## About overriding entrypoint in GitHub actions YAML
+
+- [runs.entrypoint](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#runsentrypoint)
+
+> Overrides the Docker ENTRYPOINT in the Dockerfile, or sets it if one wasn't already specified. Use entrypoint when the Dockerfile does not specify an ENTRYPOINT or you want to override the ENTRYPOINT instruction. If you omit entrypoint, the commands you specify in the Docker ENTRYPOINT instruction will execute. The Docker ENTRYPOINT instruction has a shell form and exec form. The Docker ENTRYPOINT documentation recommends using the exec form of the ENTRYPOINT instruction.
+
 
 ## Run locally
 

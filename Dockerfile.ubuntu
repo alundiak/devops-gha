@@ -4,7 +4,9 @@ FROM ubuntu
 WORKDIR /app
 COPY entrypoint_ubuntu.sh ./entrypoint_ubuntu.sh
 RUN chmod 777 ./entrypoint_ubuntu.sh
-ENTRYPOINT ./entrypoint_ubuntu.sh
+
+ENTRYPOINT ["./entrypoint_ubuntu.sh"]
+# ENTRYPOINT ./entrypoint_ubuntu.sh
 
 # This works even on GitHub action
 # ENTRYPOINT ["ps", "auxw"]
