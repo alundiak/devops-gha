@@ -25,12 +25,12 @@ RUN chmod 775 ./entrypoint_node.sh
 # GitHub Action error:
 # sh: can't open './entrypoint_node.sh': No such file or directory
 
-ENTRYPOINT ["./entrypoint_node.sh"]
+# ENTRYPOINT ["./entrypoint_node.sh"]
 # GitHub Action error:
 # docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: 
 # unable to start container process: exec: "./entrypoint_node.sh": stat ./entrypoint_node.sh: no such file or directory: unknown.
 
-# ENTRYPOINT ./entrypoint_node.sh
+ENTRYPOINT ./entrypoint_node.sh
 # GitHub Action error:
 # /bin/sh: ./entrypoint_node.sh: not found
 
