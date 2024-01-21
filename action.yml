@@ -4,5 +4,5 @@ author: "Andrii Lundiak ({{ github.actor }})"
 runs:
   using: "docker"
   # image: "Dockerfile.node.alpine" # Works BAD in regards to shell
-  image: "Dockerfile.node"
-  # image: "Dockerfile.ubuntu" # TBD
+  # image: "Dockerfile.node" # kinda bad, TBD
+  image: "Dockerfile.ubuntu"
