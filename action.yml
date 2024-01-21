@@ -3,6 +3,6 @@ description: "Test Docker Image w ENTRYPOINT"
 author: "Andrii Lundiak ({{ github.actor }})"
 runs:
   using: "docker"
-  # image: "Dockerfile.node.alpine" # Works BAD in regards to shell
-  # image: "Dockerfile.node" # kinda bad, TBD
-  image: "Dockerfile.ubuntu" # also doesn't work on GitHub Action
+  # image: "Dockerfile.node.alpine"
+  image: "Dockerfile.node"
+  # image: "Dockerfile.ubuntu"
