@@ -12,24 +12,24 @@ jobs:
     steps:
     - uses: actions/checkout@v3
   
-    - name: Build the Node Docker image
+    - name: Build the Node image
       run: docker build . --file Dockerfile.node --tag my-github-action-node-img:latest
     
-    - name: Build the Node-alpine Docker image
+    - name: Build the Node-alpine image
       run: docker build . --file Dockerfile.node.alpine --tag my-github-action-node-alpine-img:latest
     
-    - name: Build the Ubuntu Docker image
+    - name: Build the Ubuntu image
       run: docker build . --file Dockerfile.ubuntu --tag my-github-action-ubuntu-img:latest
     
     - run: docker images
 
-    - name: Run Node Docker container
+    - name: Run Node container
       run: docker run --name=MyNodeContainer -d my-github-action-node-img:latest
     
-    - name: Run Node-alpine Docker container
+    - name: Run Node-alpine container
       run: docker run --name=MyNodeAlpineContainer -d my-github-action-node-alpine-img:latest
     
-    - name: Run Ubuntu Docker container
+    - name: Run Ubuntu container
       run: docker run --name=MyUbuntuContainer -d my-github-action-ubuntu-img:latest
     
     - run: docker ps
