@@ -2,10 +2,13 @@ FROM ubuntu
 # no node, no npm
 
 WORKDIR /app
-COPY entrypoint_ubuntu.sh ./entrypoint_ubuntu.sh
-RUN chmod 777 ./entrypoint_ubuntu.sh
 
-ENTRYPOINT ["/bin/sh", "./entrypoint_ubuntu.sh"]
+COPY entrypoint_ubuntu.sh ./entrypoint_ubuntu.sh
+
+RUN chmod 777 ./entrypoint_ubuntu.sh
+RUN chmod 777 /app/entrypoint_ubuntu.sh
+
+ENTRYPOINT ["/bin/sh", "/app/entrypoint_ubuntu.sh"]
 # ENTRYPOINT ./entrypoint_ubuntu.sh
 
 # This works even on GitHub action
