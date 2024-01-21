@@ -34,4 +34,6 @@ RUN chmod 775 ./entrypoint.sh
 # GitHub Action error:
 # /bin/sh: ./entrypoint.sh: not found
 
-ENTRYPOINT exec ./entrypoint.sh
+# ENTRYPOINT exec ./entrypoint.sh
+# GitHub error:
+# /bin/sh: exec: line 0: ./entrypoint.sh: not found

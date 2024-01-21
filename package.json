@@ -4,10 +4,12 @@
   "description": "My experimental GitHub Action to run Docker NodeJS image build",
   "main": "index.js",
   "scripts": {
-    "buildImage": "docker build -t my-entrypoint-test-img:latest --file Dockerfile .",
+    "buildImageNode": "docker build -t my-entrypoint-test-img:latest --file Dockerfile.node .",
+    "buildImageNodeAlpine": "docker build -t my-entrypoint-test-img:latest --file Dockerfile.node.alpine .",
+    "buildImageUbuntu": "docker build -t my-entrypoint-test-img:latest --file Dockerfile.ubuntu .",
     "runContainer": "docker run --name=MyEntrypointContainer -d my-entrypoint-test-img:latest",
     "down": "docker stop MyEntrypointContainer && docker rm MyEntrypointContainer && docker rmi my-entrypoint-test-img:latest",
-    "start": "npm run buildImage && npm run runContainer"
+    "start": "npm run buildImageNode && npm run runContainer"
   },
   "keywords": [],
   "author": "",

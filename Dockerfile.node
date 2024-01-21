@@ -1,0 +1,13 @@
+FROM node
+
+WORKDIR /app
+
+COPY entrypoint.sh ./entrypoint.sh
+
+RUN chmod 775 ./entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]
+# ?
+
+# ENTRYPOINT ./entrypoint.sh
+# ?

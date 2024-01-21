@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Hello Entry Point"
+echo "NodeJS says Hello to Entry Point"
 
 node --version
 npm --version

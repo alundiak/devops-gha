@@ -123,6 +123,20 @@ Note when `FROM ubuntu:latest` then inside of container:
 /usr/bin/bash
 ```
 
+
+And for `FROM node` (which is fill version of image) it does have even 'dash':
+
+```sh
+# which sh
+/usr/bin/sh
+
+# which bash
+/usr/bin/bash
+
+# which dash
+/usr/bin/dash
+```
+
 ## Run locally
 
 - `docker build -t my-entrypoint-test-img:latest --file Dockerfile .`
