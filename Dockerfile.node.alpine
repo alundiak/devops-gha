@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY entrypoint_node.sh ./entrypoint_node.sh
 
-RUN chmod 775 ./entrypoint_node.sh
+RUN chmod 777 ./entrypoint_node.sh
 
 # Below variants work locally on MacOS host or when inside of container (which built/ran on MacOS host)
 # works on MacOS and inside of container
