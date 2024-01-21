@@ -38,6 +38,8 @@ ENTRYPOINT ["executable", "param1", "param2"]
 ENTRYPOINT command param1 param2
 ```
 
+> You can override the ENTRYPOINT setting using `--entrypoint`, but this can only set the binary to exec (no `sh -c` will be used).
+
 
 https://kinsta.com/blog/dockerfile-entrypoint/
 
