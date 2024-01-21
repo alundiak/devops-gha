@@ -2,11 +2,11 @@ FROM ubuntu
 # no node, no npm
 
 WORKDIR /app
-
 COPY entrypoint_ubuntu.sh ./entrypoint_ubuntu.sh
-
 RUN chmod 777 ./entrypoint_ubuntu.sh
 RUN chmod 777 /app/entrypoint_ubuntu.sh
+
+# UPD. Seems to be that ENTRYPOINT doesn't work on GitHub Actions related to the WORKDIR value
 
 ENTRYPOINT ["/bin/sh", "/app/entrypoint_ubuntu.sh"]
 # ENTRYPOINT ./entrypoint_ubuntu.sh

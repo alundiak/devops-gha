@@ -29,6 +29,15 @@ jobs:
 - For now it's just a Docker image using `ENTRYPOINT` command (a Docker layer).
 
 
+## About `WORKDIR`
+
+Docker docs - [WORKDIR](https://docs.docker.com/engine/reference/builder/#workdir)
+
+> The WORKDIR instruction sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it in the Dockerfile. 
+
+> If the WORKDIR doesn't exist, it will be created even if it's not used in any subsequent Dockerfile instruction.
+
+
 ## About `ENTRYPOINT`
 
 Docker docs about [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint)

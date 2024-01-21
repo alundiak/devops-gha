@@ -12,6 +12,8 @@ RUN mkdir subdirectory3
 RUN chmod 777 /app/entrypoint_node.sh
 RUN mkdir subdirectory4
 
+# UPD. Seems to be that ENTRYPOINT doesn't work on GitHub Actions related to the WORKDIR value
+
 # ENTRYPOINT ["./entrypoint_node.sh"]
 # GH:
 # docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: 

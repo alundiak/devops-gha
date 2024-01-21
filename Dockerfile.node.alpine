@@ -15,6 +15,8 @@ RUN mkdir subdirectory4
 # Below variants work locally on MacOS host or when inside of container (which built/ran on MacOS host)
 # works on MacOS and inside of container
 
+# UPD. Seems to be that ENTRYPOINT doesn't work on GitHub Actions related to the WORKDIR value
+
 # ENTRYPOINT ["/bin/sh", "./entrypoint_node.sh"] 
 # GitHub Action error: 
 # "/bin/sh: can't open './entrypoint_node.sh': No such file or directory"
