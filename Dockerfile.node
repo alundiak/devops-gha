@@ -1,11 +1,16 @@
 FROM node
 
 WORKDIR /app
+RUN mkdir subdirectory1
 
 COPY entrypoint_node.sh ./entrypoint_node.sh
+RUN mkdir subdirectory2
 
 RUN chmod 777 ./entrypoint_node.sh
+RUN mkdir subdirectory3
+
 RUN chmod 777 /app/entrypoint_node.sh
+RUN mkdir subdirectory4
 
 # ENTRYPOINT ["./entrypoint_node.sh"]
 # GH:

@@ -3,6 +3,6 @@ description: "Test Docker Image w ENTRYPOINT"
 author: "Andrii Lundiak ({{ github.actor }})"
 runs:
   using: "docker"
-  # image: "Dockerfile.node.alpine"
-  image: "Dockerfile.node"
+  image: "Dockerfile.node.alpine"
+  # image: "Dockerfile.node"
   # image: "Dockerfile.ubuntu"
