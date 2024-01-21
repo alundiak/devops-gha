@@ -6,8 +6,10 @@ COPY entrypoint.sh ./entrypoint.sh
 
 RUN chmod 775 ./entrypoint.sh
 
-ENTRYPOINT ["./entrypoint.sh"]
-# ?
+# ENTRYPOINT ["./entrypoint.sh"]
+# GH:
+# docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: 
+# unable to start container process: exec: "./entrypoint.sh": stat ./entrypoint.sh: no such file or directory: unknown.
 
-# ENTRYPOINT ./entrypoint.sh
+ENTRYPOINT ./entrypoint.sh
 # ?
