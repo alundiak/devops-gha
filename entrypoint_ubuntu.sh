@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -l
 
 uname -a
 echo "Ubuntu says Hello to Entry Point"

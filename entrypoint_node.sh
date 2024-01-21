@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -l
 
 uname -a
 echo "NodeJS says Hello to Entry Point"

@@ -40,6 +40,11 @@ ENTRYPOINT command param1 param2
 
 > You can override the ENTRYPOINT setting using `--entrypoint`, but this can only set the binary to exec (no `sh -c` will be used).
 
+- [Writing the action code](https://docs.github.com/en/enterprise-cloud@latest/actions/creating-actions/creating-a-docker-container-action?learn=create_actions&learnProduct=actions#writing-the-action-code)
+- [Creating a Dockerfile](https://docs.github.com/en/enterprise-cloud@latest/actions/creating-actions/creating-a-docker-container-action?learn=create_actions&learnProduct=actions#creating-a-dockerfile)
+
+=> `#!/bin/sh -l` for `entrypoint.sh`.
+
 
 https://kinsta.com/blog/dockerfile-entrypoint/
 
@@ -59,7 +64,7 @@ CMD ["--help"]
 
 Other about `ENTRYPOINT`:
 - https://gist.github.com/drmalex07/669d7b15b0df33e249a2
-- 
+
 
 
 ## `entrypoint.sh` permission
