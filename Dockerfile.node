@@ -1,4 +1,4 @@
-FROM node
+FROM node:24
 
 WORKDIR /app
 RUN mkdir subdirectory1
@@ -16,7 +16,7 @@ RUN mkdir subdirectory4
 
 # ENTRYPOINT ["./entrypoint_node.sh"]
 # GH:
-# docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: 
+# docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed:
 # unable to start container process: exec: "./entrypoint.sh": stat ./entrypoint.sh: no such file or directory: unknown.
 
 # tbd

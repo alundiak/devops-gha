@@ -1,5 +1,5 @@
 {
-  "name": "@lundiak/devops-gha",
+  "name": "@alundiak/devops-gha",
   "version": "1.0.0",
   "description": "My experimental GitHub Action to run Docker NodeJS image build",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "buildImageNodeAlpine": "docker build -t my-entrypoint-test-img:latest --file Dockerfile.node.alpine .",
     "buildImageUbuntu": "docker build -t my-entrypoint-test-img:latest --file Dockerfile.ubuntu .",
     "runContainer": "docker run --name=MyEntrypointContainer -d my-entrypoint-test-img:latest",
-    "down": "docker stop MyEntrypointContainer && docker rm MyEntrypointContainer && docker rmi my-entrypoint-test-img:latest",
+    "stopContainer": "docker stop MyEntrypointContainer && docker rm MyEntrypointContainer && docker rmi my-entrypoint-test-img:latest",
     "startNode": "npm run buildImageNode && npm run runContainer",
     "startNodeAlpine": "npm run buildImageNodeAlpine && npm run runContainer",
     "startUbuntu": "npm run buildImageUbuntu && npm run runContainer"
